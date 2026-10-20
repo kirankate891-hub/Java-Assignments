@@ -1,0 +1,105 @@
+
+class Date {
+    private int day;
+    private int month;
+    private int year;
+    private String dow;
+
+    // Default constructor
+    public Date() {
+        day = 15;
+        month = 8;
+        year = 1947;
+        dow = "Friday";
+    }
+
+    // Parameterized constructor
+    public Date(int day, int month, int year, String dow) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.dow = dow;
+    }
+
+    // Setters
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setDow(String dow) {
+        this.dow = dow;
+    }
+
+    // Getters
+    public int getDay() {
+        return day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getDow() {
+        return dow;
+    }
+
+    // Display method
+    public void display() {
+        System.out.println("Day: " + day);
+        System.out.println("Month: " + month);
+        System.out.println("Year: " + year);
+        System.out.println("Day of Week: " + dow);
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "Date [day=" + day
+                + ", month=" + month
+                + ", year=" + year
+                + ", dow=" + dow + "]";
+    }
+}
+
+// Test class
+public class DateTest {
+    public static void main(String[] args) {
+
+        // Creating objects
+        Date d1 = new Date();
+        Date d2 = new Date(20, 10, 2026, "Tuesday");
+
+        // Display objects
+        System.out.println("Default Constructor:");
+        d1.display();
+
+        System.out.println("\nParameterized Constructor:");
+        d2.display();
+
+        // Printing hashcodes
+        System.out.println("\nHashcode of d1: " + d1.hashCode());
+        System.out.println("Hashcode of d2: " + d2.hashCode());
+
+        // Printing toString
+        System.out.println("\nUsing toString():");
+        System.out.println(d1.toString());
+        System.out.println(d2.toString());
+
+        // Using setter and getter
+        d1.setDay(16);
+        System.out.println("\nUpdated Day: " + d1.getDay());
+    }
+}
+
